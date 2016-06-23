@@ -34,6 +34,7 @@ SECRET_KEY = secretsettings.secret_key
 # Application definition
 
 INSTALLED_APPS = [
+    'MatTodoApp.apps.MattodoappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'MatTodo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,7 +75,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'MatTodo.wsgi.application'
 
 
-
+LOGIN_REDIRECT_URL = '/'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
