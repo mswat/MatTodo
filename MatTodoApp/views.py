@@ -1,8 +1,7 @@
 from django.shortcuts import render
-
-from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404, HttpResponse
+import datetime
 
 # Create your views here.
 def index(request):
@@ -24,3 +23,10 @@ def register(request):
 
 
 
+def hours_ahead(request, increment):
+    try:
+        inc = int(increment)
+    except ValueError:
+        return Http404
+
+    return render(request, 'time.html', {'time':datetime.datetime.now()+datetime.timedelta(hours=inc)})
