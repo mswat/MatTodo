@@ -34,7 +34,7 @@ SECRET_KEY = secretsettings.secret_key
 # Application definition
 
 INSTALLED_APPS = [
-    'MatTodoApp.apps.MattodoappConfig',
+    'MatTodoApp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
