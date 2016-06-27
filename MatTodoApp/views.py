@@ -83,6 +83,10 @@ def addCat(request):
         form = CategoryForm()
     return render(request, 'MatToDoApp/addCategory.html', {'form':form})
 
+def Map(request):
+    return render(request, 'MatToDoApp/map.html', {'Countries':{'US':1,'AU':2,'PE':3}})
+
+
 
 class CategoryList(ListView):
     model = Category
@@ -106,3 +110,5 @@ class ModCat(UpdateView):
     template_name = 'MatTodoApp/AddCategory.html'
     model = Category
     fields = ['category']
+
+
